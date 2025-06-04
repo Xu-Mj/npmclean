@@ -1,5 +1,7 @@
 # npmclean
 
+[English](README.md) | [简体中文](README.zh.md)
+
 A high-performance CLI tool for safely and efficiently cleaning `node_modules` directories and build artifacts in JavaScript/TypeScript projects.
 
 [![Crates.io](https://img.shields.io/crates/v/npmclean.svg)](https://crates.io/crates/npmclean)
@@ -184,6 +186,14 @@ Contributions are welcome! Please check out our [Contributing Guide](docs/CONTRI
 - [Design Document](docs/DESIGN.md)
 - [Contributing Guide](docs/CONTRIBUTING.md)
 - [Technical Specification](docs/TECHNICAL_SPEC.md)
+- [Architecture Document](docs/ARCHITECTURE.md)
+
+### 中文文档
+
+- [设计文档](docs/zh/DESIGN.md)
+- [贡献指南](docs/zh/CONTRIBUTING.md)
+- [技术规范](docs/zh/TECHNICAL_SPEC.md)
+- [架构文档](docs/zh/ARCHITECTURE.md)
 
 ## License
 
