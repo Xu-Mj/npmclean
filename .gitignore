@@ -1,1 +1,26 @@
-/target
+# Rust
+/target/
+**/*.rs.bk
+Cargo.lock
+
+# IDE
+.vscode/
+.idea/
+*.iml
+*.swp
+*.swo
+
+# Executables
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Testing
+*.tmp
+*.log
+
+# OS specific
+.DS_Store
+Thumbs.db

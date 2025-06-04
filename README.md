@@ -15,6 +15,21 @@ A high-performance CLI tool for safely and efficiently cleaning `node_modules` d
 - **Flexible:** Customizable targets, recursive mode, and various configuration options
 - **Cross-platform:** Works on Windows, macOS, and Linux
 
+## Building from Source
+
+To build from source, you'll need Rust installed. Then:
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/npm-clean.git
+cd npm-clean
+
+# Build the project
+cargo build --release
+
+# The binary will be available at target/release/npm-clean
+```
+
 ## Installation
 
 ### From Cargo (Recommended for Rust users)

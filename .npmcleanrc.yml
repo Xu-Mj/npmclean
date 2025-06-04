@@ -1,0 +1,31 @@
+# npmclean 配置文件示例
+
+# 要清理的目标目录
+targets:
+  - node_modules
+  - dist
+  - build
+  - .next
+  - .nuxt
+  - .cache
+  - coverage
+  - out
+
+# 要排除的目录
+exclude:
+  # - node_modules/some-important-package  # 取消注释以排除特定目录
+
+# 基础设置
+recursive: false  # 是否递归扫描子目录中的项目
+force: false      # 是否跳过确认直接删除
+stats: true       # 是否显示统计信息
+verbose: false    # 是否显示详细输出
+
+# 清理选项
+clean_node_modules: true  # 是否清理 node_modules
+clean_build_dirs: true    # 是否清理构建目录
+
+# 高级选项
+max_depth: 5              # 递归扫描的最大深度
+threads: 4                # 并行处理的线程数
+# timeout: 120            # 清理操作的超时时间（秒） 
