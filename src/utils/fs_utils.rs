@@ -13,7 +13,7 @@ pub fn calculate_directory_size(path: &Path) -> Result<u64> {
 
     let mut total_size = 0;
     let walker = WalkDir::new(path).min_depth(1).into_iter();
-    
+
     // 使用walkdir，更可靠地处理深层次目录结构
     for entry in walker.filter_map(|e| e.ok()) {
         if let Ok(metadata) = entry.metadata() {
@@ -24,8 +24,12 @@ pub fn calculate_directory_size(path: &Path) -> Result<u64> {
             }
         }
     }
-    
-    debug!("Directory {} total size: {} bytes", path.display(), total_size);
+
+    debug!(
+        "Directory {} total size: {} bytes",
+        path.display(),
+        total_size
+    );
     Ok(total_size)
 }
 
