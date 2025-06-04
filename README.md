@@ -3,7 +3,7 @@
 A high-performance CLI tool for safely and efficiently cleaning `node_modules` directories and build artifacts in JavaScript/TypeScript projects.
 
 [![Crates.io](https://img.shields.io/crates/v/npmclean.svg)](https://crates.io/crates/npmclean)
-[![Build Status](https://github.com/yourusername/npmclean/workflows/CI/badge.svg)](https://github.com/yourusername/npmclean/actions)
+[![Build Status](https://github.com/Xu-Mj/npmclean/workflows/CI/badge.svg)](https://github.com/Xu-Mj/npmclean/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Features

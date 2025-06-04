@@ -3,10 +3,10 @@ name = "npmclean"
 version = "0.1.0"
 edition = "2024"
 description = "A fast and safe cleaner for node_modules and other frontend build artifacts"
-authors = ["Your Name <your.email@example.com>"]
+authors = ["Xu_mj"]
 license = "MIT"
 readme = "README.md"
-repository = "https://github.com/yourusername/npmclean"
+repository = "https://github.com/Xu-Mj/npmclean"
 keywords = ["npm", "node", "cleaner", "node_modules", "tool"]
 categories = ["command-line-utilities", "development-tools"]
 
