@@ -1,9 +1,9 @@
-# npm-clean
+# npmclean
 
 A high-performance CLI tool for safely and efficiently cleaning `node_modules` directories and build artifacts in JavaScript/TypeScript projects.
 
-[![Crates.io](https://img.shields.io/crates/v/npm-clean.svg)](https://crates.io/crates/npm-clean)
-[![Build Status](https://github.com/yourusername/npm-clean/workflows/CI/badge.svg)](https://github.com/yourusername/npm-clean/actions)
+[![Crates.io](https://img.shields.io/crates/v/npmclean.svg)](https://crates.io/crates/npmclean)
+[![Build Status](https://github.com/yourusername/npmclean/workflows/CI/badge.svg)](https://github.com/yourusername/npmclean/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Features
@@ -21,13 +21,13 @@ To build from source, you'll need Rust installed. Then:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/npm-clean.git
-cd npm-clean
+git clone https://github.com/yourusername/npmclean.git
+cd npmclean
 
 # Build the project
 cargo build --release
 
-# The binary will be available at target/release/npm-clean
+# The binary will be available at target/release/npmclean
 ```
 
 ## Installation
@@ -35,23 +35,23 @@ cargo build --release
 ### From Cargo (Recommended for Rust users)
 
 ```bash
-cargo install npm-clean
+cargo install npmclean
 ```
 
 ### Pre-built Binaries
 
-Download the latest release for your platform from the [Releases](https://github.com/yourusername/npm-clean/releases) page.
+Download the latest release for your platform from the [Releases](https://github.com/yourusername/npmclean/releases) page.
 
 ### From npm
 
 ```bash
-npm install -g npm-clean-cli
+npm install -g npmclean-cli
 ```
 
 ### Using Homebrew (macOS)
 
 ```bash
-brew install npm-clean
+brew install npmclean
 ```
 
 ## Quick Start
@@ -59,26 +59,26 @@ brew install npm-clean
 Clean the current project:
 
 ```bash
-npm-clean
+npmclean
 ```
 
 Recursively clean all projects in a directory:
 
 ```bash
-npm-clean -r /path/to/projects
+npmclean -r /path/to/projects
 ```
 
 Display what would be deleted without actually deleting:
 
 ```bash
-npm-clean --dry-run
+npmclean --dry-run
 ```
 
 ## Usage
 
 ```txt
 USAGE:
-    npm-clean [OPTIONS] [PATH]
+    npmclean [OPTIONS] [PATH]
 
 ARGS:
     <PATH>    Project or directory path, defaults to current directory
@@ -99,7 +99,7 @@ OPTIONS:
 
 ## Configuration
 
-npm-clean can be configured through command-line options or configuration files.
+npmclean can be configured through command-line options or configuration files.
 
 ### Configuration File
 
@@ -129,36 +129,36 @@ recursive: false
 ### Clean Only Build Directories
 
 ```bash
-npm-clean --build
+npmclean --build
 ```
 
 ### Clean Only Node Modules
 
 ```bash
-npm-clean --node-modules
+npmclean --node-modules
 ```
 
 ### Clean All Projects Under a Directory with Statistics
 
 ```bash
-npm-clean -r -s /path/to/projects
+npmclean -r -s /path/to/projects
 ```
 
 ### Clean Specific Project with Custom Directories
 
 ```bash
-npm-clean --include=".cache,.yarn-cache" /path/to/project
+npmclean --include=".cache,.yarn-cache" /path/to/project
 ```
 
 ### Exclude Specific Directories
 
 ```bash
-npm-clean --exclude="node_modules/some-large-pkg" /path/to/project
+npmclean --exclude="node_modules/some-large-pkg" /path/to/project
 ```
 
 ## Framework Detection
 
-npm-clean automatically detects these framework types and their build directories:
+npmclean automatically detects these framework types and their build directories:
 
 | Framework | Detected Build Directories |
 |-----------|---------------------------|
@@ -172,7 +172,7 @@ npm-clean automatically detects these framework types and their build directorie
 ## Performance Tips
 
 - Use the recursive mode (`-r`) to clean multiple projects at once
-- For very large directories, consider increasing thread count: `npm-clean --threads=8`
+- For very large directories, consider increasing thread count: `npmclean --threads=8`
 - On Windows, the tool automatically uses optimized deletion techniques
 
 ## Contributing

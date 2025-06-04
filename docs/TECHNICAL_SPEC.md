@@ -1,6 +1,6 @@
-# npm-clean Technical Specification
+# npmclean Technical Specification
 
-This document provides detailed technical specifications for npm-clean, focusing on implementation details, data structures, algorithms, and architectural decisions.
+This document provides detailed technical specifications for npmclean, focusing on implementation details, data structures, algorithms, and architectural decisions.
 
 ## Core Data Structures
 
@@ -703,13 +703,13 @@ mod benchmarks {
 
 ```toml
 [package]
-name = "npm-clean"
+name = "npmclean"
 version = "0.1.0"
 edition = "2021"
 authors = ["Your Name <your.email@example.com>"]
 description = "A fast and safe cleaner for node_modules and other frontend build artifacts"
 license = "MIT"
-repository = "https://github.com/yourusername/npm-clean"
+repository = "https://github.com/yourusername/npmclean"
 readme = "README.md"
 keywords = ["npm", "node", "cleaner", "node_modules", "tool"]
 categories = ["command-line-utilities", "development-tools"]
@@ -760,7 +760,7 @@ The project will be distributed through multiple channels:
 1. **Cargo (crates.io)**: Primary distribution for Rust users
 
    ```bash
-   cargo install npm-clean
+   cargo install npmclean
    ```
 
 2. **Pre-built Binaries**: For non-Rust users, binaries will be provided for:
@@ -771,7 +771,7 @@ The project will be distributed through multiple channels:
 3. **npm Package**: For convenience for JavaScript developers:
 
    ```bash
-   npm install -g npm-clean-cli
+   npm install -g npmclean-cli
    ```
 
    (This will download the appropriate binary for the user's platform)
@@ -779,7 +779,7 @@ The project will be distributed through multiple channels:
 4. **Homebrew**: For macOS users
 
    ```bash
-   brew install npm-clean
+   brew install npmclean
    ```
 
 5. **Scoop/Chocolatey**: For Windows users

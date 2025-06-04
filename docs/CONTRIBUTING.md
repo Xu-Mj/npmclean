@@ -1,10 +1,10 @@
-# Contributing to npm-clean
+# Contributing to npmclean
 
-Thank you for your interest in contributing to npm-clean! This document provides guidelines and information about how to contribute to the project.
+Thank you for your interest in contributing to npmclean! This document provides guidelines and information about how to contribute to the project.
 
 ## Project Philosophy
 
-npm-clean aims to be:
+npmclean aims to be:
 
 - **Fast**: Optimized for performance, especially on Windows
 - **Safe**: Prevents accidental deletion of important files
@@ -30,7 +30,7 @@ See the [DESIGN.md](./DESIGN.md) document for a detailed overview of the project
 
 ## Extension Points
 
-npm-clean is designed to be extensible. Here are the main extension points:
+npmclean is designed to be extensible. Here are the main extension points:
 
 ### 1. Project Detectors
 
@@ -118,7 +118,7 @@ To add a new command or flag:
 
 ## Plugins (Future)
 
-In the future, npm-clean will support a formal plugin system. The architecture is being designed with this in mind.
+In the future, npmclean will support a formal plugin system. The architecture is being designed with this in mind.
 
 ## Code Style Guidelines
 
@@ -150,4 +150,4 @@ In the future, npm-clean will support a formal plugin system. The architecture i
 - For bugs and features, open an issue on GitHub
 - For questions, use GitHub Discussions
 
-Thank you for contributing to npm-clean!
+Thank you for contributing to npmclean!

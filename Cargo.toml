@@ -6,7 +6,7 @@ description = "A fast and safe cleaner for node_modules and other frontend build
 authors = ["Your Name <your.email@example.com>"]
 license = "MIT"
 readme = "README.md"
-repository = "https://github.com/yourusername/npm-clean"
+repository = "https://github.com/yourusername/npmclean"
 keywords = ["npm", "node", "cleaner", "node_modules", "tool"]
 categories = ["command-line-utilities", "development-tools"]
 

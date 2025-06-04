@@ -1,10 +1,10 @@
-# npm-clean Architecture
+# npmclean Architecture
 
-This document describes the architecture of npm-clean, focusing on the modular design and extension points.
+This document describes the architecture of npmclean, focusing on the modular design and extension points.
 
 ## Architectural Overview
 
-npm-clean follows a modular, layered architecture with clear separation of concerns:
+npmclean follows a modular, layered architecture with clear separation of concerns:
 
 ```txt
 ┌─────────────────────────────────────────────────────────┐
@@ -62,7 +62,7 @@ npm-clean follows a modular, layered architecture with clear separation of conce
 
 ## Modular Design
 
-npm-clean uses a plugin-based architecture to enable extending functionality without modifying core code.
+npmclean uses a plugin-based architecture to enable extending functionality without modifying core code.
 
 ### Extension Points
 
@@ -190,7 +190,7 @@ scanner.rs ──┴──▶ project/ ◀─┬─── cleaner/
 
 ### 1. Trait-Based Plugins
 
-npm-clean uses traits as the primary extension mechanism:
+npmclean uses traits as the primary extension mechanism:
 
 ```rust
 pub trait ProjectDetector: Send + Sync {

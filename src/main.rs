@@ -18,7 +18,7 @@ use crate::plugins::{ExamplePlugin, HookType, PluginRegistry};
 fn main() -> Result<()> {
     // 初始化日志系统 - 日志输出到文件
     let log_dir = setup_logging()?;
-    info!("Starting npm-clean");
+    info!("Starting npmclean");
 
     // 初始化插件系统
     let plugin_registry = initialize_plugins()?;
@@ -83,7 +83,7 @@ fn main() -> Result<()> {
         eprintln!("Warning: Plugin execution failed: {}. See log file for details.", e);
     }
 
-    info!("npm-clean completed successfully");
+    info!("npmclean completed successfully");
     Ok(())
 }
 
@@ -113,7 +113,7 @@ fn setup_logging() -> Result<PathBuf> {
 
     // 生成日志文件名
     let timestamp = chrono::Local::now().format("%Y-%m-%d_%H-%M-%S");
-    let log_file = log_dir.join(format!("npm-clean_{}.log", timestamp));
+    let log_file = log_dir.join(format!("npmclean_{}.log", timestamp));
 
     // 配置文件日志记录器
     let file_logger = fern::Dispatch::new()
@@ -143,12 +143,12 @@ fn setup_logging() -> Result<PathBuf> {
 fn get_log_directory() -> Result<PathBuf> {
     let mut log_dir = dirs::data_local_dir()
         .ok_or_else(|| anyhow::anyhow!("Could not determine local data directory"))?
-        .join("npm-clean")
+        .join("npmclean")
         .join("logs");
 
     // 如果不存在则使用临时目录
     if !log_dir.exists() && fs::create_dir_all(&log_dir).is_err() {
-        log_dir = std::env::temp_dir().join("npm-clean").join("logs");
+        log_dir = std::env::temp_dir().join("npmclean").join("logs");
     }
 
     Ok(log_dir)

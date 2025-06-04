@@ -7,7 +7,7 @@ use crate::project::Project;
 
 #[derive(Parser, Debug)]
 #[command(
-    name = "npm-clean",
+    name = "npmclean",
     about = "Fast and safe cleaner for node_modules and build directories",
     version
 )]

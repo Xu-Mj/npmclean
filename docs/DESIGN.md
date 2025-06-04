@@ -1,8 +1,8 @@
-# npm-clean Design Document
+# npmclean Design Document
 
 ## Overview
 
-npm-clean is a high-performance CLI tool designed to efficiently clean node_modules directories and build artifacts in JavaScript/TypeScript projects. Built with Rust, it focuses on speed, safety, and user experience.
+npmclean is a high-performance CLI tool designed to efficiently clean node_modules directories and build artifacts in JavaScript/TypeScript projects. Built with Rust, it focuses on speed, safety, and user experience.
 
 ## Core Functionality
 
@@ -31,7 +31,7 @@ npm-clean is a high-performance CLI tool designed to efficiently clean node_modu
 ```txt
 
 USAGE:
-    npm-clean [OPTIONS] [PATH]
+    npmclean [OPTIONS] [PATH]
 
 ARGS:
     <PATH>    Project or directory path, defaults to current directory
