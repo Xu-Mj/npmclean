@@ -7,7 +7,7 @@ mod scanner;
 mod utils;
 
 use anyhow::Result;
-use log::{info, LevelFilter};
+use log::{LevelFilter, info};
 use std::any::Any;
 use std::collections::HashMap;
 use std::fs;
@@ -35,7 +35,10 @@ fn main() -> Result<()> {
 
     // 执行清理前钩子
     if let Err(e) = plugin_registry.execute_hook(HookType::BeforeCleaning, &context) {
-        eprintln!("Warning: Plugin execution failed: {}. See log file for details.", e);
+        eprintln!(
+            "Warning: Plugin execution failed: {}. See log file for details.",
+            e
+        );
     }
 
     // 创建扫描器并扫描项目
@@ -60,7 +63,10 @@ fn main() -> Result<()> {
     // 将插件检测器添加到清理器
     let plugin_detectors = plugin_registry.get_project_detectors();
     if !plugin_detectors.is_empty() {
-        info!("Loaded {} project detectors from plugins", plugin_detectors.len());
+        info!(
+            "Loaded {} project detectors from plugins",
+            plugin_detectors.len()
+        );
         // 这里需要更新cleaner，将插件检测器集成到清理器中
         cleaner.add_detectors(plugin_detectors);
     }
@@ -80,7 +86,10 @@ fn main() -> Result<()> {
     // 执行清理后钩子
     context.insert("results".to_string(), Box::new(results));
     if let Err(e) = plugin_registry.execute_hook(HookType::AfterCleaning, &context) {
-        eprintln!("Warning: Plugin execution failed: {}. See log file for details.", e);
+        eprintln!(
+            "Warning: Plugin execution failed: {}. See log file for details.",
+            e
+        );
     }
 
     info!("npmclean completed successfully");

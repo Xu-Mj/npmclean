@@ -13,7 +13,7 @@ pub trait ProjectDetector: Send + Sync {
 
     /// 获取项目对应的构建目录
     fn get_build_dirs(&self, project: &Project) -> Vec<String>;
-    
+
     /// 获取项目对应的缓存目录
     fn get_cache_dirs(&self, _project: &Project) -> Vec<String> {
         Vec::new() // 默认实现，返回空列表
@@ -90,7 +90,7 @@ impl ProjectDetector for DefaultDetector {
     fn get_build_dirs(&self, _project: &Project) -> Vec<String> {
         vec!["dist".to_string(), "build".to_string(), "out".to_string()]
     }
-    
+
     fn get_cache_dirs(&self, _project: &Project) -> Vec<String> {
         vec![".cache".to_string()]
     }

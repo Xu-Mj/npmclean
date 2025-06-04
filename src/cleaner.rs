@@ -76,7 +76,11 @@ impl<'a> Cleaner<'a> {
         // 开始清理
         info!(
             "Starting {} of {} projects{}",
-            if self.config.dry_run { "dry run" } else { "cleaning" },
+            if self.config.dry_run {
+                "dry run"
+            } else {
+                "cleaning"
+            },
             projects.len(),
             if self.config.dry_run {
                 " (no files will be deleted)"

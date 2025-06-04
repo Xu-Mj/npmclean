@@ -56,12 +56,14 @@ impl ProjectDetector for VueDetector {
         };
 
         // 添加更全面的Vue3检测
-        let is_vue = package_info.dependencies.contains_key("vue") ||
-            package_info.dev_dependencies.contains_key("vue") ||
-            package_info.dependencies.contains_key("@vue/cli-service") ||
-            package_info.dev_dependencies.contains_key("@vue/cli-service") ||
-            project.path.join("vue.config.js").exists() || 
-            project.path.join("vite.config.js").exists();
+        let is_vue = package_info.dependencies.contains_key("vue")
+            || package_info.dev_dependencies.contains_key("vue")
+            || package_info.dependencies.contains_key("@vue/cli-service")
+            || package_info
+                .dev_dependencies
+                .contains_key("@vue/cli-service")
+            || project.path.join("vue.config.js").exists()
+            || project.path.join("vite.config.js").exists();
 
         if is_vue {
             project.project_type = ProjectType::Vue;

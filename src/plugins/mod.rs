@@ -1,9 +1,9 @@
 // 导出模块
-mod registry;
 mod examples;
+mod registry;
 
-pub use registry::{Plugin, PluginRegistry};
 pub use examples::ExamplePlugin;
+pub use registry::{Plugin, PluginRegistry};
 
 /// 插件钩子类型
 #[allow(dead_code)]
@@ -21,4 +21,4 @@ pub enum HookType {
     BeforeCleanTarget,
     /// 在每个目标清理之后调用
     AfterCleanTarget,
-} 
+}

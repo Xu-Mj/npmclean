@@ -117,9 +117,15 @@ pub fn display_clean_results(results: &CleanResults, config: &Config) {
 
     // 仅在详细模式下显示更多统计信息
     if config.stats {
-        println!("Projects processed: {}/{}", results.cleaned_projects, results.total_projects);
-        println!("Targets cleaned: {}/{}", results.cleaned_targets, results.total_targets);
-        
+        println!(
+            "Projects processed: {}/{}",
+            results.cleaned_projects, results.total_projects
+        );
+        println!(
+            "Targets cleaned: {}/{}",
+            results.cleaned_targets, results.total_targets
+        );
+
         if results.failed_projects > 0 || results.failed_targets > 0 {
             println!("\n[WARNING] Issues encountered during cleaning:");
             if results.failed_projects > 0 {
