@@ -68,13 +68,10 @@ impl<'a> Scanner<'a> {
             // 扫描子目录
             if let Ok(entries) = fs::read_dir(&path) {
                 for entry in entries.filter_map(Result::ok) {
-                    if entry.file_type().map_or(false, |ft| ft.is_dir()) {
+                    if entry.file_type().is_ok_and(|ft| ft.is_dir()) {
                         let path = entry.path();
                         // 跳过 node_modules 目录以提高性能
-                        if path
-                            .file_name()
-                            .map_or(false, |name| name == "node_modules")
-                        {
+                        if path.file_name().is_some_and(|name| name == "node_modules") {
                             continue;
                         }
 
@@ -183,7 +180,7 @@ impl<'a> Scanner<'a> {
             targets.push(CleanTarget {
                 path: node_modules_path,
                 target_type: TargetType::NodeModules,
-                size: size,
+                size,
             });
         }
 
@@ -206,7 +203,7 @@ impl<'a> Scanner<'a> {
                     targets.push(CleanTarget {
                         path: dir_path,
                         target_type: TargetType::BuildDir,
-                        size: size,
+                        size,
                     });
                 }
             }
@@ -230,7 +227,7 @@ impl<'a> Scanner<'a> {
                     targets.push(CleanTarget {
                         path: dir_path,
                         target_type: TargetType::CacheDir,
-                        size: size,
+                        size,
                     });
                 }
             }
@@ -254,7 +251,7 @@ impl<'a> Scanner<'a> {
                     targets.push(CleanTarget {
                         path: dir_path,
                         target_type: TargetType::Coverage,
-                        size: size,
+                        size,
                     });
                 }
             }
@@ -275,16 +272,13 @@ impl<'a> Scanner<'a> {
                 targets.push(CleanTarget {
                     path: target_path,
                     target_type: TargetType::Custom(target_name.clone()),
-                    size: size,
+                    size,
                 });
             }
         }
 
         // 应用过滤规则
-        targets = targets
-            .into_iter()
-            .filter(|target| !self.is_excluded(&target.path))
-            .collect();
+        targets.retain(|target| !self.is_excluded(&target.path));
 
         project.detected_targets = targets;
         Ok(())
