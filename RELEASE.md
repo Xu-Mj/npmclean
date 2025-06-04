@@ -27,6 +27,7 @@ The automated build process creates binaries for:
 
 2. **Create a Version Tag**
    - Create a tag using semantic versioning: `v1.0.0`, `v1.1.0`, etc.
+
    ```bash
    git tag -a v1.0.0 -m "Version 1.0.0"
    git push origin v1.0.0
@@ -67,4 +68,4 @@ If the automated build fails:
 1. Check the workflow logs for errors
 2. Verify that the binary name in `Cargo.toml` matches the artifact names in the workflow file
 3. Ensure all required dependencies are specified in the workflow file
-4. Try building manually for the platform that's failing 
+4. Try building manually for the platform that's failing
