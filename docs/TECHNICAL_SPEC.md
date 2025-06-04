@@ -773,7 +773,7 @@ The project will be distributed through multiple channels:
    ```bash
    npm install -g npm-clean-cli
    ```
-   
+
    (This will download the appropriate binary for the user's platform)
 
 4. **Homebrew**: For macOS users
