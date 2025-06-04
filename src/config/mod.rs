@@ -101,9 +101,62 @@ mod tests {
     #[test]
     fn test_default_config() {
         let config = Config::default();
+        println!("Default config values:");
+        println!("clean_node_modules = {}", config.clean_node_modules);
+        println!("clean_build_dirs = {}", config.clean_build_dirs);
+        println!("clean_cache_dirs = {}", config.clean_cache_dirs);
+        println!("clean_coverage_dirs = {}", config.clean_coverage_dirs);
+
+        assert!(
+            config.clean_node_modules,
+            "clean_node_modules should be true"
+        );
+        assert!(config.clean_build_dirs, "clean_build_dirs should be true");
+        assert!(!config.dry_run, "dry_run should be false");
+        assert!(!config.force, "force should be false");
+    }
+
+    #[test]
+    fn test_cli_args_override() {
+        // 测试默认值
+        let mut config = Config::default();
         assert!(config.clean_node_modules);
         assert!(config.clean_build_dirs);
-        assert!(!config.dry_run);
-        assert!(!config.force);
+
+        // 创建一个模拟的 CLI 参数
+        let args = CliArgs {
+            path: std::path::PathBuf::from("."),
+            recursive: false,
+            force: false,
+            dry_run: false,
+            config: None,
+            node_modules_only: true, // 只清理 node_modules
+            build: false,
+            include: None,
+            exclude: None,
+            stats: false,
+            verbose: false,
+        };
+
+        // 应用 CLI 参数
+        config = apply_cli_args(config, &args);
+
+        // 验证 node_modules_only 参数的效果
+        assert!(
+            config.clean_node_modules,
+            "clean_node_modules should be true with node_modules_only"
+        );
+        assert!(
+            !config.clean_build_dirs,
+            "clean_build_dirs should be false with node_modules_only"
+        );
+        assert!(
+            !config.clean_cache_dirs,
+            "clean_cache_dirs should be false with node_modules_only"
+        );
+        assert!(
+            !config.clean_coverage_dirs,
+            "clean_coverage_dirs should be false with node_modules_only"
+        );
     }
 }
